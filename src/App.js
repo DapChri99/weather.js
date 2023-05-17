@@ -2,10 +2,24 @@ import hotBg from './assets/hot.jpg'
 import stormyBg from './assets/stormy.jpg'
 import cloudyBg from './assets/cloudy.jpg'
 import Descriptions from './components/Descriptions.jsx'
+import { useEffect } from 'react'
+import { getFormattedWeatherData } from './weatherService'
 
 
 function App() {
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+        const data = await getFormattedWeatherData('rome')
+    }
+
+    fetchWeatherData()
+  }, [])
+
+
+
   return (
+
   <div className="app" style={{ backgroundImage: `url(${cloudyBg})`}}>
     <div className='overlay'>
       <div className='container'>
