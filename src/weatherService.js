@@ -14,7 +14,7 @@ const getFormattedWeatherData = async (city, units = 'metric') => {
         weather, 
         main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
         wind: { speed },
-        sys: { contry },
+        sys: { country },
         name
     }= data
 
@@ -31,7 +31,7 @@ const getFormattedWeatherData = async (city, units = 'metric') => {
         pressure,
         humidity,
         speed,
-        contry,
+        country,
         name
     }
 }
