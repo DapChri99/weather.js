@@ -6,7 +6,7 @@ import { getFormattedWeatherData } from './weatherService'
 
 
 function App() {
-  const [city, setCity] = useState('Rome')
+  const [city, setCity] = useState('London')
   const [weather, setWeather] = useState(null)
   const [units, setUnits ] = useState('metric')
   const [bg, setBg] = useState(hotBg)
@@ -39,7 +39,9 @@ function App() {
     if (e.keyCode === 13) {
       setCity(e.currentTarget.value)
       e.currentTarget.blur()
+      
     }
+    
   }
 
   return (
@@ -51,7 +53,7 @@ function App() {
           <div className='container'>
         <div className='section section__inputs'>
           <input 
-            onKeyDown={(e)=> enterKeyPressed} 
+            onKeyDown={(e)=> enterKeyPressed(e)} 
               type="text" 
               name='city' 
               placeholder="Enter City..."/>
